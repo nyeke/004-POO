@@ -18,7 +18,8 @@ public class Director extends Gerente{
         this.matricula = matricula;
     }
 
-    private void incrementarSalario(){
+    @Override
+    protected void incrementarSalario(){
         this.setSalario(this.getSalario()*1.10+100);
     }
 }

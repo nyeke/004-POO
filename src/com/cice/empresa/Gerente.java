@@ -18,7 +18,7 @@ public class Gerente extends Empleado {
         this.departamento = departamento;
     }
 
-    private void incrementarSalario(){
+    protected void incrementarSalario(){
         this.setSalario(this.getSalario()*1.05);
     }
 
