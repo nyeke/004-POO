@@ -1,8 +1,8 @@
-package com.cice.biblioteca;
-import java.util.ArrayList;
+package com.cice.biblioteca.primer.orden;
+
 import java.util.Scanner;
 
-public abstract class Item {
+public class Recurso {
 
     Scanner sc = new Scanner(System.in);
     private int opcion;

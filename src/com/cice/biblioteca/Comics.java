@@ -1,5 +1,7 @@
 package com.cice.biblioteca;
 
+import com.cice.biblioteca.primer.orden.Publicacion;
+
 public class Comics extends Publicacion {
 
     private long numeroComic;
@@ -26,5 +28,13 @@ public class Comics extends Publicacion {
 
     public void setColeccionComic(String coleccionComic) {
         this.coleccionComic = coleccionComic;
+    }
+
+    @Override
+    public String toString() {
+        return "Comics{" +
+                "numeroComic=" + numeroComic +
+                ", coleccionComic='" + coleccionComic + '\'' +
+                "} " + super.toString();
     }
 }

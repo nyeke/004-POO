@@ -1,15 +1,15 @@
-package com.cice.biblioteca;
+package com.cice.biblioteca.primer.orden;
 
-public class Multimedia extends Item {
+public class Multimedia extends Recurso{
 
     private String titulo;
-    private long formato;
-    private long duracion;
+    private String formato;
+    private String duracion;
 
     public Multimedia() {
     }
 
-    public Multimedia(String titulo, long formato, long duracion) {
+    public Multimedia(String titulo, String formato, String duracion) {
         this.titulo = titulo;
         this.formato = formato;
         this.duracion = duracion;
@@ -23,19 +23,19 @@ public class Multimedia extends Item {
         this.titulo = titulo;
     }
 
-    public long getFormato() {
+    public String getFormato() {
         return formato;
     }
 
-    public void setFormato(long formato) {
+    public void setFormato(String formato) {
         this.formato = formato;
     }
 
-    public long getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(long duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 }

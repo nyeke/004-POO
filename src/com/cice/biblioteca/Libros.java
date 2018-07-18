@@ -1,10 +1,16 @@
 package com.cice.biblioteca;
 
-public class Libros extends Publicacion{
+import com.cice.biblioteca.interfaces.Iprestable;
+import com.cice.biblioteca.primer.orden.Publicacion;
 
-        private String edicionLibro;
-        private String isbn;
-        private String autorLibro;
+public class Libros extends Publicacion implements Iprestable{
+
+    private String edicionLibro;
+    private String isbn;
+    private String autorLibro;
+
+    //Añadido debido a la implementacion de la interface. Nada obliga a creala
+    private boolean estaPrestado;
 
 
     public Libros(String fechaPublicacion, String nombre, String edicionLibro, String isbn, String autorLibro) {
@@ -36,5 +42,42 @@ public class Libros extends Publicacion{
 
     public void setAutorLibro(String autorLibro) {
         this.autorLibro = autorLibro;
+    }
+
+    @Override
+    public boolean prestar() {
+        if (esPrestado()){
+            return false;
+        } else {
+            this.estaPrestado = true;
+            return this.estaPrestado;
+        }
+    }
+
+    @Override
+    public boolean devolver() {
+        if (esPrestado()){
+            this.estaPrestado = false;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean esPrestado() {
+        return this.estaPrestado;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "fecha publicacion='" + getFechaPublicacion()+ '\'' +
+                ", nombre='" + getNombre() + '\'' +
+                ", edicionLibro='" + edicionLibro + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", autorLibro='" + autorLibro + '\'' +
+                ", estaPrestado=" + estaPrestado +
+                "} " + super.toString();
     }
 }

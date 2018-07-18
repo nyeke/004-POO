@@ -1,5 +1,8 @@
 package com.cice.biblioteca;
 
+import com.cice.biblioteca.interfaces.Iprestable;
+import com.cice.biblioteca.primer.orden.Publicacion;
+
 public class Revistas extends Publicacion{
 
     private long numeroRevista;

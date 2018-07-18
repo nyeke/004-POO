@@ -1,6 +1,6 @@
-package com.cice.biblioteca;
+package com.cice.biblioteca.primer.orden;
 
-public class Publicacion extends Item {
+public class Publicacion extends Recurso{
 
     private String fechaPublicacion;
     private String nombre;

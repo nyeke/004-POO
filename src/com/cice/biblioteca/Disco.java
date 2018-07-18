@@ -1,29 +1,73 @@
 package com.cice.biblioteca;
 
-public class Disco extends Multimedia {
+import com.cice.biblioteca.interfaces.Iprestable;
+import com.cice.biblioteca.primer.orden.Multimedia;
 
-    private String sello;
-    private String grupo;
+public class Disco extends Multimedia implements Iprestable{
 
-    public Disco(String titulo, long formato, long duracion, String sello, String grupo) {
+    private String selloDiscografico;
+    private String artista;
+    private boolean estaPrestado;
+
+    public Disco() {
+    }
+
+    public Disco(String titulo, String formato, String duracion, String selloDiscografico, String artista) {
         super(titulo, formato, duracion);
-        this.sello = sello;
-        this.grupo = grupo;
+        this.selloDiscografico = selloDiscografico;
+        this.artista = artista;
     }
 
-    public String getSello() {
-        return sello;
+    public String getSelloDiscografico() {
+        return selloDiscografico;
     }
 
-    public void setSello(String sello) {
-        this.sello = sello;
+    public void setSelloDiscografico(String selloDiscografico) {
+        this.selloDiscografico = selloDiscografico;
     }
 
-    public String getGrupo() {
-        return grupo;
+    public String getArtista() {
+        return artista;
     }
 
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
+    public void setArtista(String artista) {
+        this.artista = artista;
+    }
+
+    @Override
+    public boolean prestar() {
+        if (esPrestado()){
+            return false;
+        } else {
+            this.estaPrestado = true;
+            return this.estaPrestado;
+        }
+    }
+
+    @Override
+    public boolean devolver() {
+        if (esPrestado()){
+            this.estaPrestado = false;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean esPrestado() {
+        return this.estaPrestado;
+    }
+
+    @Override
+    public String toString() {
+        return "Disco{" +
+                "titulo" + getTitulo() + '\'' +
+                ", formato" + getFormato() + '\'' +
+                ", duracion" + getDuracion() + '\'' +
+                ", selloDiscografico='" + selloDiscografico + '\'' +
+                ", artista='" + artista + '\'' +
+                ", estaPrestado=" + estaPrestado +
+                "} " + super.toString();
     }
 }
