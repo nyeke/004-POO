@@ -1,6 +1,6 @@
 package com.cice.biblioteca;
 
-public class Revistas extends Producto {
+public class Revistas extends Publicacion{
 
     private long numeroRevista;
     private String perioricidad;

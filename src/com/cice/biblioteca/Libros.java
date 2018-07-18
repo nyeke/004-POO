@@ -1,6 +1,6 @@
 package com.cice.biblioteca;
 
-public class Libros extends Producto{
+public class Libros extends Publicacion{
 
         private String edicionLibro;
         private String isbn;

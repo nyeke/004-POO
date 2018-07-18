@@ -1,6 +1,6 @@
 package com.cice.biblioteca;
 
-public class Comics extends Producto {
+public class Comics extends Publicacion {
 
     private long numeroComic;
     private String coleccionComic;

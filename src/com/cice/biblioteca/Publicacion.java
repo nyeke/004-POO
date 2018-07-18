@@ -1,14 +1,14 @@
 package com.cice.biblioteca;
 
-public class Producto implements Prestamo {
+public class Publicacion extends Item {
 
     private String fechaPublicacion;
     private String nombre;
 
-    public Producto() {
+    public Publicacion() {
     }
 
-    public Producto(String fechaPublicacion, String nombre) {
+    public Publicacion(String fechaPublicacion, String nombre) {
         this.fechaPublicacion = fechaPublicacion;
         this.nombre = nombre;
     }
